@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="flex justify-center items-center h-screen">
+    <div class="bg-white rounded-lg shadow-md p-8 max-w-md">
+      <h2 class="text-2xl font-bold mb-6">OTP Verification</h2>
+      {% if form.errors %}
+        <p class="text-red-500 mb-4">{{ form.errors.otp }}</p>
+      {% endif %}
+      <form method="POST" action="{% url 'verify' %}">
+        {% csrf_token %}
+        {{ form.otp.label_tag }}
+        {{ form.otp }}
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Verify</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

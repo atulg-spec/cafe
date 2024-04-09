@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="text-2xl font-bold">Birth Form</h2>
+  <form method="post" action="/jn" class="mt-4 max-w-lg mx-auto my-4 p-4 bg-white rounded shadow">
+    {% csrf_token %}
+    <div class="mb-4">
+      <label for="{{ form.name.id_for_label }}" class="font-semibold">Name:</label>
+      {{ form.name }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.aadhaar_number.id_for_label }}" class="font-semibold">आधार नंबर / Aadhaar Number:</label>
+      {{ form.aadhaar_number }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.gender.id_for_label }}" class="font-semibold">Select Gender:</label>
+      {{ form.gender }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.date_of_birth.id_for_label }}" class="font-semibold">जन्म तिथि / Date Of Birth:</label>
+      {{ form.date_of_birth }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.date_of_birth_in_words.id_for_label }}" class="font-semibold">जन्म तिथि / Date Of Birth (IN WORDS):</label>
+      {{ form.date_of_birth_in_words }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.place_of_birth.id_for_label }}" class="font-semibold">Place Of Birth:</label>
+      {{ form.place_of_birth }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.place_of_birth_local_language.id_for_label }}" class="font-semibold">Place Of Birth (Local Language):</label>
+      {{ form.place_of_birth_local }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.father_name.id_for_label }}" class="font-semibold">NAME OF FATHER:</label>
+      {{ form.father_name }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.father_aadhaar_number.id_for_label }}" class="font-semibold">पिता का आधार / Father's Aadhaar No.:</label>
+      {{ form.father_aadhaar_number }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.mother_name.id_for_label }}" class="font-semibold">NAME OF MOTHER:</label>
+      {{ form.mother_name }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.mother_aadhaar_number.id_for_label }}" class="font-semibold">Mother's Aadhaar No.:</label>
+      {{ form.mother_aadhaar_number }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.permanent_address.id_for_label }}" class="font-semibold">Permanent Address:</label>
+      {{ form.permanent_address }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.address_at_birth.id_for_label }}" class="font-semibold">Address at the time of Birth:</label>
+      {{ form.birth_address }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.local_language.id_for_label }}" class="font-semibold">Select Local Language:</label>
+      {{ form.local_language }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.date_of_registration.id_for_label }}" class="font-semibold">Date Of Registration:</label>
+      {{ form.date_of_registration }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.date_of_issue.id_for_label }}" class="font-semibold">Date Of Issue:</label>
+      {{ form.date_of_issue }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.state.id_for_label }}" class="font-semibold">Select State:</label>
+      {{ form.state }}
+    </div>
+    <div class="mb-4">
+      <label for="{{ form.hospital_name.id_for_label }}" class="font-semibold">Select Hospital:</label>
+      {{ form.hospital_name }}
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Submit</button>
+  </form>
+{% endblock %}

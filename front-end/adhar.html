@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br>
+  <form method="post" action="/adf" enctype="multipart/form-data" class="max-w-lg mx-auto my-4 p-4 bg-white rounded shadow">
+    {% csrf_token %}
+    <div class="mb-4">
+      {{ form.user}}
+      {{ form.aadhaar_number.label_tag }}
+      {{ form.aadhaar_number}}
+    </div>
+    <div class="mb-4">
+      {{ form.name.label_tag }}
+      {{ form.name }}
+    </div>
+    <div class="mb-4">
+      {{ form.gender.label_tag }}
+      {{ form.gender }}
+    </div>
+    <div class="mb-4">
+      {{ form.date_of_birth.label_tag }}
+      {{ form.date_of_birth }}
+    </div>
+    <div class="mb-4">
+      {{ form.relation.label_tag }}
+      {{ form.relation }}
+    </div>
+    <div class="mb-4">
+      {{ form.father_husband_name.label_tag }}
+      {{ form.father_husband_name }}
+    </div>
+    <div class="mb-4">
+      {{ form.house_number.label_tag }}
+      {{ form.house_number }}
+    </div>
+    <div class="mb-4">
+      {{ form.street.label_tag }}
+      {{ form.street }}
+    </div>
+    <div class="mb-4">
+      {{ form.area.label_tag }}
+      {{ form.area }}
+    </div>
+    <div class="mb-4">
+      {{ form.district.label_tag }}
+      {{ form.district }}
+    </div>
+    <div class="mb-4">
+      {{ form.state.label_tag }}
+      {{ form.state }}
+    </div>
+    <div class="mb-4">
+      {{ form.pin_code.label_tag }}
+      {{ form.pin_code }}
+    </div>
+    <div class="mb-4">
+      {{ form.address.label_tag }}
+      {{ form.address }}
+    </div>
+    <div class="mb-4">
+      {{ form.photo.label_tag }}
+      {{ form.photo }}
+    </div>
+    <div class="mb-4">
+      {{ form.local_language.label_tag }}
+      {{ form.local_language }}
+    </div>
+    <div class="mb-4">
+      {{ form.local_name.label_tag }}
+      {{ form.local_name }}
+    </div>
+    <div class="mb-4">
+      {{ form.local_address.label_tag }}
+      {{ form.local_address }}
+    </div>
+    <div class="mb-4">
+      {{ form.enrollment_number.label_tag }}
+      {{ form.enrollment_number }}
+    </div>
+    <div class="mb-4">
+      {{ form.issue_date.label_tag }}
+      {{ form.issue_date }}
+    </div>
+    <div class="mb-4">
+      {{ form.download_date.label_tag }}
+      {{ form.download_date }}
+    </div>
+    <button type="submit" class="bg-indigo-500 text-white px-4 py-2 rounded">Submit</button>
+  </form>
+{% endblock %}
